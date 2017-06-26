@@ -5,7 +5,11 @@ export default class ProductDetails extends Component {
 
   render() {
     let product = this.props.product;
-    let flavorList = product.flavors.map(function(flavor, i){
+    let flavors = [];
+    if (product.flavors) {
+      flavors = product.flavors;
+    }
+    let flavorList = flavors.map(function(flavor, i){
       console.log('length', product.flavors.length);
       if (i == product.flavors.length-1) {
         console.log('id',i);
@@ -28,7 +32,8 @@ export default class ProductDetails extends Component {
             </p> : null}
             <p className="lead">
               <strong> Flavors: </strong>
-              {flavorList}
+
+              {product.flavors ? flavorList : null}
             </p>
             <h2 className="text-center"> {accounting.formatMoney(product.price)} </h2>
             <button className="btn btn-primary text-center"> Add to Cart </button>

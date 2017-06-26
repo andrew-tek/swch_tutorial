@@ -9,7 +9,7 @@ export default class Name extends Component {
         <img className="img-responsive"   src={product.image}/>
         <h2 className="text-center"> {product.name}  </h2>
         <div className="text-center">
-          {product.price}
+          <h2> <span> ${product.price} </span> </h2>
           <Link to={'/product/' + product._id}>
             <button className="btn btn-primary text-center"> Buy Now </button>
           </Link>
