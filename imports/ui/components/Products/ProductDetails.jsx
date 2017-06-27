@@ -28,7 +28,9 @@ export default class ProductDetails extends Component {
             <h2 className="text-center"> {product.name} </h2>
             {product.description ? <p className="lead">
               <strong> Description: </strong>
-              <p> {product.description}</p>
+              <p>
+                 {product.description} 
+              </p>
             </p> : null}
             <p className="lead">
               <strong> Flavors: </strong>
