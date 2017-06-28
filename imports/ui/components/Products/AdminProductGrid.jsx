@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
 import DeleteButton from '/imports/ui/components/buttons/DeleteButton.jsx';
-export default class Name extends Component {
+export default class AdminProductGrid extends Component {
 
   render() {
     let product = this.props.product;

@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
-import HomePage from '/imports/ui/pages/AdminPage.jsx';
+import AdminPage from '/imports/ui/pages/AdminPage.jsx';
 import {Products} from '/imports/api/products/products.js';
 
 export default createContainer((props) => {
@@ -13,4 +13,4 @@ export default createContainer((props) => {
     loading: !productSub.ready()
   };
 
-}, HomePage);
+}, AdminPage);
