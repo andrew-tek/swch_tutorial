@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { browserHistory } from 'react-router';
 export default class SignIn extends Component {
+
   render() {
     let submitSignIn = () => {
       const password = this.refs.password.value.trim();
@@ -32,6 +33,7 @@ export default class SignIn extends Component {
             <button onClick={submitSignIn} type="submit" className="btn btn-default">Login</button>
           </div>
         </div>
+
       </div>
     )
   }

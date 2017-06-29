@@ -8,7 +8,8 @@ import ProductInsert from '/imports/ui/components/Products/ProductInsert.jsx';
 import AdminContainer from '/imports/ui/containers/AdminContainer.jsx';
 import SignUp from '/imports/ui/pages/SignUp.jsx';
 import SignIn from '/imports/ui/pages/SignIn.jsx';
-import MainContainer from '/imports/ui/containers/MainContainer.jsx'
+import MainContainer from '/imports/ui/containers/MainContainer.jsx';
+import LoginSignup from '/imports/ui/pages/LoginSignup.jsx';
 
 
 //we're using react router
@@ -22,6 +23,7 @@ export default () => (
       <Route path="/admin" component={AdminContainer} />
       <Route path="/signup" component={SignUp} />
       <Route path="/signin" component={SignIn} />
+      <Route path="/login" component={LoginSignup} />
     </Route>
   </Router>
 );
