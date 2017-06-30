@@ -8,11 +8,10 @@ export default class ProductPage extends Component {
         return <h1> loading... </h1>
       }
       else {
-        let product = this.props.product;
       return (
         <div>
           <div className="container">
-               <ProductDetails product={product}/>
+               <ProductDetails {...this.props}/>
           </div>
         </div>
       )

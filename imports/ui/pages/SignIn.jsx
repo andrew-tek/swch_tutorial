@@ -15,20 +15,20 @@ export default class SignIn extends Component {
       });
     }
     return (
-      <div className="form-horizontal">
-        <div className="form-group">
+      <div className="htmlFor-horizontal">
+        <div className="htmlFor-group">
           <label htmlFor="inputEmail3" className="col-sm-2 control-label">Email</label>
           <div className="col-sm-10">
-            <input ref="email" type="email" className="form-control" id="inputEmail3" placeholder="Email"/>
+            <input ref="email" type="email" className="htmlFor-control" id="inputEmail3" placeholder="Email"/>
           </div>
         </div>
-        <div className="form-group">
+        <div className="htmlFor-group">
           <label htmlFor="inputPassword3" className="col-sm-2 control-label">Password</label>
           <div className="col-sm-10">
-            <input ref="password" type="password" className="form-control" id="inputPassword3" placeholder="Password"/>
+            <input ref="password" type="password" className="htmlFor-control" id="inputPassword3" placeholder="Password"/>
           </div>
         </div>
-        <div className="form-group">
+        <div className="htmlFor-group">
           <div className="col-sm-offset-2 col-sm-10">
             <button onClick={submitSignIn} type="submit" className="btn btn-default">Login</button>
           </div>

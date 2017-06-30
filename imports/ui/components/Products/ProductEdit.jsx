@@ -26,26 +26,26 @@ export default class ProductEdit extends Component {
     }
     return (
       <div>
-        <div className="form-horizontal">
-          <div className="form-group">
+        <div className="htmlFor-horizontal">
+          <div className="htmlFor-group">
             <label htmlFor="inputName" className="col-sm-2 control-label">Name</label>
             <div className="col-sm-10">
-              <input ref="name" type="text" className="form-control" id="inputName" placeholder="Product Name" defaultValue={product.name}/>
+              <input ref="name" type="text" className="htmlFor-control" id="inputName" placeholder="Product Name" defaultValue={product.name}/>
             </div>
           </div>
-          <div className="form-group">
+          <div className="htmlFor-group">
             <label htmlFor="inputDescription" className="col-sm-2 control-label">Description</label>
             <div className="col-sm-10">
-              <input ref="description" type="text" className="form-control" id="inputDescription" placeholder="Product Description" defaultValue={product.description}/>
+              <input ref="description" type="text" className="htmlFor-control" id="inputDescription" placeholder="Product Description" defaultValue={product.description}/>
             </div>
           </div>
-          <div className="form-group">
+          <div className="htmlFor-group">
             <label htmlFor="inputVolume" className="col-sm-2 control-label">Volume</label>
             <div className="col-sm-10">
-              <input ref="volume" type="text" className="form-control" id="inputVolume" placeholder="Product Volume" defaultValue={product.volume}/>
+              <input ref="volume" type="text" className="htmlFor-control" id="inputVolume" placeholder="Product Volume" defaultValue={product.volume}/>
             </div>
           </div>
-          <div className="form-group">
+          <div className="htmlFor-group">
             <div className="col-sm-offset-2 col-sm-10">
               <button onClick={updateProduct} type="submit" className="btn btn-default">Submit</button>
             </div>
