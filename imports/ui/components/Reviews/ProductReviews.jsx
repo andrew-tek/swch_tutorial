@@ -32,11 +32,12 @@ export default class ProductReviews extends Component {
 
     return (
       <div>
-        Avg Rating:
+        Average Rating:
         <StarRating
           size= {5}
           value= {this.state.avgRating}
         />
+        <hr className="lineBreak"/>
         {listReviews}
       </div>
 

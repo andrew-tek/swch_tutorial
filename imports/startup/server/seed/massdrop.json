@@ -1,0 +1,31 @@
+{
+    "_id" : "mango",
+    "product_id": "mango",
+    "brand_id" : "vape_lab",
+    "brand_name" : "Vape Lab",
+    "brand_logo" : "https://swchllc.s3.amazonaws.com/products/rockt_punch/logo.png",
+    "product_name" : "Mango",
+    "images" : ["https://swchllc.s3.amazonaws.com/products/salt/mango/0.png"],
+    "description" : "Strawberries have been blended with the popular Japanese yogurt drink to bring you a refreshing all day vape.",
+    "flavors" : [
+        "mango",
+        "spicy"
+    ],
+    "company_id" : "swchlab",
+    "type" : "retail",
+    "region" : "USA",
+    "weight" : 5.5,
+    "org_price": 30.00,
+    "tiers" : [
+    {"id": 0, "participants": 0, "price": 30.00},
+    {"id": 1, "participants": 10, "price": 25.00},
+    {"id": 2, "participants": 20, "price": 20.00},
+    {"id": 3, "participants": 30, "price": 15.00}
+    ],
+    "units_in_stock": 100,
+    "participants": 0,
+    "units_ordered": 0,
+    "orders": [],
+    "start_date": ISODate("2017-07-03T07:00:00.000Z"),
+    "end_date": ISODate("2017-07-10T07:00:00.000Z")
+}
