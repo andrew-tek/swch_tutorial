@@ -16,7 +16,7 @@ Meteor.methods({
         participants: updateParticipants,
       }
         //if participants == nextTier participants, update cur-tier in data base to
-      if (updateParticipants == nextTier.participants) {
+      if (nextTier && updateParticipants == nextTier.participants) {
         //update current tier
         curTier = nextTier;
         updateValue.cur_tier = curTier;
