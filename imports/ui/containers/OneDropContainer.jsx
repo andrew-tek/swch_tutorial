@@ -9,6 +9,7 @@ export default createContainer((props) => {
   let selector = {product_id: productId};
  const product = MassDrops.findOne(selector);
   return {
+    userLogin: !!Meteor.userId(),
     product: product,
     loading: !oneDropSub.ready()
   };

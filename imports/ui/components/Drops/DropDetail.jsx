@@ -16,7 +16,7 @@ export default class DropDetail extends Component {
     let nextTier = null;
     let needParticipants = 0;
     let nextPrice = null;
-
+    console.log('userId', this.props.userLogin);
     if(curTier.id < tiers.length-1){
       nextTier = tiers[curTier.id+1];
       needParticipants = nextTier.participants - product.participants;
@@ -45,9 +45,10 @@ export default class DropDetail extends Component {
               :<span > ${product.org_price} </span> }
               <div>{nextTier ? <span>{needParticipants} more people needed for this price ${nextPrice}</span>
               : <span></span>}</div>
-                {!!Meteor.userId() ?
+                {this.props.userLogin ?
                   <button onClick={addParticipant} className="btn btn-primary text-center">Participate Now</button>
                     : <Link to="/signin"><button className="btn btn-primary text-center">Participate Now(Lead to Signin)</button></Link>}
+                    <p>{product.participants} participated</p>
                 <Countdown targetDate={expireDay}
                 startDelay={0}
                interval={1000}
