@@ -38,13 +38,6 @@ OrdersSchema = new SimpleSchema({
       else return this.unset();
     }
   }
-
-
-
-
-
-
-
 });
 
 TiersSchema = new SimpleSchema({

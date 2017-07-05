@@ -3,7 +3,7 @@ import { Mongo } from 'meteor/mongo';
 import { MassDrops } from '/imports/api/massdrops/massdrops.js';
 
 Meteor.methods({
-    addParticipants: function(id) {
+    addParticipants: function(id, quantity) {
       let selector = {_id:id};
       let curDrop = MassDrops.findOne(selector);
       let curTier = curDrop.cur_tier;
@@ -11,9 +11,11 @@ Meteor.methods({
       if (curTier.id < curDrop.tiers.length) {
         nextTier = curDrop.tiers[curTier.id + 1];
       }
+      let quantityInStock = curDrop.units_in_stock - quantity;
       let updateParticipants = curDrop.participants + 1;
       let updateValue={
         participants: updateParticipants,
+        units_in_stock: quantityInStock 
       }
         //if participants == nextTier participants, update cur-tier in data base to
       if (nextTier && updateParticipants == nextTier.participants) {
@@ -23,7 +25,6 @@ Meteor.methods({
       }
 
     let massDropId = MassDrops.update(selector, {$set: updateValue});
-
     if(massDropId) {
         return "success";
     } else {

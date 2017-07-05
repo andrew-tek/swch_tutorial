@@ -14,4 +14,5 @@ import '/imports/api/massdrops/massdrops.js';
 import '/imports/api/droporders/droporders.js';
 import '/imports/api/massdrops/server/publications/list_drops.js';
 import '/imports/api/massdrops/server/methods/add_participants.js';
-import '/imports/api/massdrops/server/publications/one_drop.js'
+import '/imports/api/massdrops/server/publications/one_drop.js';
+import '/imports/api/droporders/methods/add_orders.js';
