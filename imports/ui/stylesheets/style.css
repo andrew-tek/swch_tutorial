@@ -190,3 +190,16 @@ label.star:before {
   border-style: solid;
   border-color: black;
 }
+
+.btn-circle.btn-xl  {
+  width: 79px;
+  height: 79px;
+  text-align: center;
+  padding: 13px 0;
+  font-size: 16px;
+  border-radius: 70px;
+}
+
+.needed{
+  font-size: 10px;
+}

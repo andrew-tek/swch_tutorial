@@ -32,9 +32,9 @@ export default class DropGrid extends Component {
             {nextTier ? <span> {neededParticipants} more people needed for ${nextPrice}
              </span>
             : <span> </span>}</div>
-          {/* <Link to={'/drop/' + product.product_id}> */}
-            <button onClick={addParticipants} className="btn btn-primary text-center"> Participate Now! </button>
-          {/* </Link> */}
+           <Link to={'/drop/' + product.product_id}>
+            <button className="btn btn-primary text-center"> View Drop </button>
+           </Link>
         </div>
       </div>
     )
