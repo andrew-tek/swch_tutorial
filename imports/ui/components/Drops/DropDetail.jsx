@@ -9,11 +9,7 @@ export default class DropDetail extends Component {
     //display needed participants and next tier price
 
     let product = this.props.product;
-<<<<<<< HEAD
-    let expireDate = product.end_date;
-=======
     let expireDay = product.end_date;
->>>>>>> 8b5dc3a85a320b56be132d54dd147787afd9184c
     let curTier = product.cur_tier;
     let curParticipants = product.participants;
     let tiers = product.tiers;
@@ -49,17 +45,11 @@ export default class DropDetail extends Component {
               :<span > ${product.org_price} </span> }
               <div>{nextTier ? <span>{needParticipants} more people needed for this price ${nextPrice}</span>
               : <span></span>}</div>
-<<<<<<< HEAD
-                <button onClick={addParticipant} className="btn btn-primary text-center">Participate Now</button>
-                <Countdown targetDate={expireDate}
-               startDelay={0}
-=======
                 {!!Meteor.userId() ?
                   <button onClick={addParticipant} className="btn btn-primary text-center">Participate Now</button>
                     : <Link to="/signin"><button className="btn btn-primary text-center">Participate Now(Lead to Signin)</button></Link>}
                 <Countdown targetDate={expireDay}
                 startDelay={0}
->>>>>>> 8b5dc3a85a320b56be132d54dd147787afd9184c
                interval={1000}
                timeSeparator={' : '}
                leadingZero
