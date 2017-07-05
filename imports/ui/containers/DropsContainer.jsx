@@ -6,9 +6,9 @@ import {MassDrops} from '/imports/api/massdrops/massdrops.js';
 export default createContainer((props) => {
   const dropsSub = Meteor.subscribe('list_drops');
 
+
   let selector = {};
  const products = MassDrops.find(selector).fetch();
- console.log('product',products);
   return {
     products: products,
     loading: !dropsSub.ready()

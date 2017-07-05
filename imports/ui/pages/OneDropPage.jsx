@@ -12,7 +12,7 @@ export default class OneDropPage extends Component {
       return (
         <div>
           <div className="container">
-              <DropDetail product={product}/>
+              <DropDetail product={product} userLogin={this.props.userLogin}/>
           </div>
         </div>
       )

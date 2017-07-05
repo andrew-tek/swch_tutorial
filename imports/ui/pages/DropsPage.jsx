@@ -10,7 +10,7 @@ export default class DropsPage extends Component {
       else {
         let products = this.props.products;
         let productsList = products.map(function(product){
-            return <DropGrid key={product._id} product={product}/>
+            return <DropGrid key={product._id} product={product} />
   });
       return (
         <div>
