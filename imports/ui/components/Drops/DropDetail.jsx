@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
 import DropProgressBar from './DropProgressBar'
-import DropProgressCircle from './DropProgressCircle'
+// import DropProgressCircle from './DropProgressCircle'
 export default class DropDetail extends Component {
   render() {
     //find out current tier
@@ -22,16 +22,19 @@ export default class DropDetail extends Component {
     let addParticipant = () => {
       Meteor.call("addParticipant", product._id);
     }
+    var Countdown = require('react-cntdwn');
+    var handleFinish = function () {
+      console.log('Skynet has become self-aware!');
+    }
     return (
       <div className="col-sm-12">
         <h1 className="text-center">{product.product_name}</h1>
         <div className="row">
           <div className="col-sm-8">
             <img className="img-responsive"  src={product.images[0]}/>
-            <div>
               <span><DropProgressBar/> </span>
-              <span><DropProgressCircle/> </span>
-          </div>
+            {/* <span><DropProgressCircle/> </span> */}
+
           </div>
           <div className="col-sm-4">
             <div className="text-center">
@@ -40,6 +43,18 @@ export default class DropDetail extends Component {
               <div>{nextTier ? <span>{needParticipants} more people needed for this price ${nextPrice}</span>
               : <span></span>}</div>
                 <button onClick={addParticipant} className="btn btn-primary text-center">Participate Now</button>
+                <Countdown targetDate={new Date('July 7, 2017')}
+               startDelay={0}
+               interval={1000}
+               timeSeparator={' : '}
+               leadingZero
+               onFinished={handleFinish}
+                format={{
+                  day:'DD',
+                  hour: 'hh',
+                  minute: 'mm',
+                  second: 'ss'
+                  }}/>
             </div>
           </div>
         </div>
