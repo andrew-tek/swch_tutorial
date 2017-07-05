@@ -8,19 +8,21 @@ export default class DropDetail extends Component {
     //get needed participants from tier participants - current participants
     //display needed participants and next tier price
     let product = this.props.product;
+    let expireDate = product.end_date;
     let curTier = product.cur_tier;
     let curParticipants = product.participants;
     let tiers = product.tiers;
     let nextTier = null;
     let needParticipants = 0;
     let nextPrice = null;
+
     if(curTier.id < tiers.length-1){
       nextTier = tiers[curTier.id+1];
       needParticipants = nextTier.participants - product.participants;
       nextPrice = nextTier.price;
     }
     let addParticipant = () => {
-      Meteor.call("addParticipant", product._id);
+      Meteor.call("addParticipants", product._id);
     }
     var Countdown = require('react-cntdwn');
     var handleFinish = function () {
@@ -43,7 +45,7 @@ export default class DropDetail extends Component {
               <div>{nextTier ? <span>{needParticipants} more people needed for this price ${nextPrice}</span>
               : <span></span>}</div>
                 <button onClick={addParticipant} className="btn btn-primary text-center">Participate Now</button>
-                <Countdown targetDate={new Date('July 7, 2017')}
+                <Countdown targetDate={expireDate}
                startDelay={0}
                interval={1000}
                timeSeparator={' : '}
