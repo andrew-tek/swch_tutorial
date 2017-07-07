@@ -5,9 +5,9 @@ export const DropOrders = new Mongo.Collection("droporders");
 
 DropOrdersSchema = new SimpleSchema({
 
-  id : {
+  product_id : {
     type: String,
-    label: "id",
+    label: "product id",
   },
   order_id: {
     type: String,

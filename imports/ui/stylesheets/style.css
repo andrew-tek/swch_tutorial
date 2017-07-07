@@ -203,3 +203,64 @@ label.star:before {
 .needed{
   font-size: 10px;
 }
+.quantity-input{
+  margin-top: 5px;
+  margin-left: 33px;
+}
+.circle {
+	background: white;
+	border-radius:50%;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #5cb85c;
+	color: black;
+	display:table;
+	font-weight: bold;
+	font-size: 1em;
+	width: auto;
+	margin:0 0;
+}
+.circle div{
+
+	display:table-cell;
+	vertical-align:middle;
+	/*height:100px;
+	width:100px;*/
+	text-align:center;
+	padding: 0 15px;
+}
+
+.progress-bar-col{
+  padding-left: 0px;
+  padding-right: 0px;
+  float:left;
+}
+
+.drop-progress-bar{
+  margin-top: 45px;
+  margin-right: -5px;
+}
+
+.drop-circle{
+  width:106px;
+  margin-right: -5px;
+}
+.progress-bar-row{
+  background-color: #f3f1f1;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.price{
+  display: block;
+  text-align: center;
+}
+.needed{
+  display: block;
+  padding:0px;
+}
+.progress1{
+  height: 10px;
+  background-color: #ddd;
+  box-shadow: none;
+}
