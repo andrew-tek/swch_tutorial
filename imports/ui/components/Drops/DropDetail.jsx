@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
 import DropProgressBar from './DropProgressBar'
-// import DropProgressCircle from './DropProgressCircle'
+
 export default class DropDetail extends Component {
   render() {
     //find out current tier
@@ -23,14 +23,24 @@ export default class DropDetail extends Component {
       nextPrice = nextTier.price;
     }
     let addParticipant = () => {
+      if(this.refs.quantity.value <= 0){
+        return Bert.alert('Quantity need to be at least 1', 'danger',
+          'fixed-top', 'fa-thumbs-o-up');
+      }
+      if(product.units_in_stock == 0){
+        return Bert.alert('Out of Stock', 'danger',
+          'fixed-top', 'fa-thumbs-o-up');
+      }
       if (product.units_in_stock < this.refs.quantity.value) {
         this.refs.quantity.value = product.units_in_stock;
         return Bert.alert('you order too much', 'danger',
           'fixed-top', 'fa-thumbs-o-up');
       }
+
+
       Meteor.call("addParticipants", product._id, this.refs.quantity.value);
       let order = {
-        id: "s",
+        product_id: product.product_id,
         order_id: "0001",
         user_id: Meteor.userId(),
         quantity: this.refs.quantity.value,
@@ -48,27 +58,34 @@ export default class DropDetail extends Component {
       <div className="col-sm-12">
         <h1 className="text-center">{product.product_name}</h1>
         <div className="row">
-          <div className="col-sm-8">
+          <div className="col-sm-9">
             <img className="img-responsive"  src={product.images[0]}/>
-              <span><DropProgressBar/> </span>
-            {/* <span><DropProgressCircle/> </span> */}
-
+              <span><DropProgressBar product={product}/> </span>
           </div>
-          <div className="col-sm-4">
+          <div className="col-sm-3">
             <div className="text-center">
-              {product.cur_tier.price < product.org_price ? <span><s>${product.org_price}</s><span>  ${product.cur_tier.price}</span></span>
-              :<span > ${product.org_price} </span> }
-              <br/>
-              <input type="number" defaultValue="1" ref="quantity"></input>
               <div>
-                {this.props.userLogin ?
-                  <button onClick={addParticipant} className="btn btn-primary text-center">Participate Now</button>
-                    : <Link to="/signin"><button className="btn btn-primary text-center">Participate Now (L)</button></Link>}
+                {product.cur_tier.price < product.org_price ? <span><s>${product.org_price}</s><span>  ${product.cur_tier.price}</span></span>
+                :<span > ${product.org_price} </span> }
+              </div>
+              <div className="row">
+                <input className="col-sm-4 quantity-input" type="number" defaultValue="1" ref="quantity"></input>
+                  {this.props.userLogin ?
+                    <button ref="participate" disabled="" onClick={addParticipant} className="btn btn-primary text-center">Participate Now</button>
+                      : <Link to="/signin"><button className="btn btn-primary text-center">Participate Now</button></Link>}
 
               </div>
 
               <div>{nextTier ? <span>{needParticipants} more people needed for this price ${nextPrice}</span>
               : <span></span>}</div>
+              <div>
+                {product.units_in_stock==0 ?
+                  <div>
+                  <h5 className="text-warning">Out of Stock</h5>
+
+                  </div>
+                  : <h5 className="text-success">In Stock</h5>}
+              </div>
               <p>{product.participants} participated</p>
                 <Countdown targetDate={expireDay}
                 startDelay={0}

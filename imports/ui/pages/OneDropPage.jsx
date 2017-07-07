@@ -11,9 +11,7 @@ export default class OneDropPage extends Component {
         let product = this.props.product;
       return (
         <div>
-          <div className="container">
-              <DropDetail product={product} userLogin={this.props.userLogin}/>
-          </div>
+          <DropDetail product={product} userLogin={this.props.userLogin}/>
         </div>
       )
     }
