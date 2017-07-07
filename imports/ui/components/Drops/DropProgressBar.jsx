@@ -38,7 +38,7 @@ export default class DropProgressBar extends Component {
             <div style={{width: '75%'}} className="progress-bar-col drop-progress-bar">
               <div className="progress progress1">
                 {fill ?
-                  <div key={i} className="progress-bar progress-bar-success" style={{width: progressString}}>
+                  <div key={i} className="progress-bar progress-bar-success progress-bar-color" style={{width: progressString}}>
                     <span className="sr-only"></span>
                   </div>
                 :
@@ -49,7 +49,7 @@ export default class DropProgressBar extends Component {
               </div>
             </div>
             <div className=" progress-bar-col drop-circle">
-              <DropProgressCircle radius={'96px'} text={'$16.99'}/>
+              <DropProgressCircle full={fill} radius={'96px'} price={tier.price} need={curNeedParticipants}/>
             </div>
           </div>
         )
@@ -59,13 +59,19 @@ export default class DropProgressBar extends Component {
           <div >
             <div style={{width: '30%'}} className="progress-bar-col drop-progress-bar">
               <div className="progress progress1">
-                <div key={i} className="progress-bar progress-bar-success" style={{width: progress}}>
-                  <span className="sr-only"></span>
-                </div>
+                {fill ?
+                  <div key={i} className="progress-bar progress-bar-success progress-bar-color" style={{width: progressString}}>
+                    <span className="sr-only"></span>
+                  </div>
+                :
+                  <div key={i} className="progress-bar progress-bar-success" >
+                    <span className="sr-only"></span>
+                  </div>}
+                  {progress<100 ? fill=false : fill = fill}
               </div>
             </div>
             <div className=" progress-bar-col drop-circle">
-              <DropProgressCircle radius={'96px'} text={'$16.99'}/>
+              <DropProgressCircle full={fill} radius={'96px'} price={tier.price} need={curNeedParticipants}/>
             </div>
           </div>
         )
@@ -76,7 +82,7 @@ export default class DropProgressBar extends Component {
             <div style={{width: '15%'}} className="progress-bar-col drop-progress-bar">
               <div className="progress progress1">
                 {fill ?
-                  <div key={i} className="progress-bar progress-bar-success" style={{width: progressString}}>
+                  <div key={i} className="progress-bar progress-bar-success progress-bar-color" style={{width: progressString}}>
                     <span className="sr-only"></span>
                   </div>
                 :

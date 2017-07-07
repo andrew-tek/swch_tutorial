@@ -244,6 +244,8 @@ label.star:before {
 .drop-circle{
   width:106px;
   margin-right: -5px;
+  position: relative;
+  z-index: 4000;
 }
 .progress-bar-row{
   background-color: #f3f1f1;
@@ -262,5 +264,11 @@ label.star:before {
 .progress1{
   height: 10px;
   background-color: #ddd;
-  box-shadow: none;
+  position: relative;
+  z-index: 100; 
+}
+.progress-bar-color{
+  -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
 }
