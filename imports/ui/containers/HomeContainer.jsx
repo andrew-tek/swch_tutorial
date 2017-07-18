@@ -1,16 +1,27 @@
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
-import HomePage from '/imports/ui/pages/Homepage.jsx';
+import { connect }  from 'react-redux';
+import Homepage from '/imports/ui/pages/Homepage.jsx';
 import {Products} from '/imports/api/products/products.js';
 
-export default createContainer((props) => {
+const HomeContainer = createContainer(({catalogType}) => {
   const productSub = Meteor.subscribe('list_products');
   let selector = {};
 
- const products = Products.find(selector).fetch();
+  const products = Products.find(selector).fetch();
+  //console.warn('productSub ', products);
+
   return {
     products: products,
     loading: !productSub.ready()
   };
 
-}, HomePage);
+}, Homepage);
+
+function mapStateToProps(state) {
+  return {
+    catalogType: state.catalogType
+  };
+}
+
+export default connect(mapStateToProps)(HomeContainer);

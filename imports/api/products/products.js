@@ -48,6 +48,13 @@ ProductSchema = new SimpleSchema({
     defaultValue: 0,
     optional: true
   },
+  wholesale_price: {
+    type: Number,
+    label: "wholesale price",
+    decimal: true,
+    defaultValue: 0,
+    optional: true
+  },
   flavors: {
     type: [String],
     label: "product flavors",
