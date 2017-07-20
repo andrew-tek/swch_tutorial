@@ -26,6 +26,7 @@ class Header extends Component {
             <li ><Link to="/drops">Mass Drops</Link></li>
             <li ><Link to="/signup">SignUp</Link></li>
             <li ><Link to="/signin">SignIn</Link></li>
+            <li ><Link to="/blogs">Blog</Link></li>
           </ul>
         </div>
         <div className="col-sm-4" style={{textAlign: 'right'}}>

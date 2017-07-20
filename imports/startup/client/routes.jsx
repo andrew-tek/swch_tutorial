@@ -12,6 +12,11 @@ import MainContainer from '/imports/ui/containers/MainContainer.jsx';
 import LoginSignup from '/imports/ui/pages/LoginSignup.jsx';
 import DropsContainer from '/imports/ui/containers/DropsContainer.jsx';
 import OneDropContainer from '/imports/ui/containers/OneDropContainer.jsx';
+import BlogWritePage  from '/imports/ui/pages/BlogWritePage.jsx';
+import BlogsContainer from '/imports/ui/containers/BlogsContainer.jsx';
+import OneBlogContainer from '/imports/ui/containers/OneBlogContainer.jsx';
+
+
 
 
 //we're using react router
@@ -27,6 +32,9 @@ export default () => (
       <Route path="/signin" component={SignIn} />
       <Route path="/login" component={LoginSignup} />
       <Route path="/drops" component={DropsContainer} />
+      <Route path="/blogs" component={BlogsContainer} />
+      <Route path="/blog/write" component={BlogWritePage} />
+      <Route path="/blogs/:blog_id" component={OneBlogContainer} />
       <Route path="/drop/:product_id" component={OneDropContainer} />
     </Route>
   </Router>
