@@ -22,3 +22,8 @@ import '/imports/api/blogs/server/methods/insert_blog.js';
 import '/imports/api/blogs/server/publications/list_blogs.js';
 import '/imports/api/blogs/blogs.js';
 import '/imports/api/blogs/server/publications/one_blog.js';
+
+//Wishlist
+import '/imports/api/wishlist/server/publications/list_wishlist.js';
+import '/imports/api/wishlist/server/methods/insert_wishlist.js';
+import '/imports/api/wishlist/wishlist.js';

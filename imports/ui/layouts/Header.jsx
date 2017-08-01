@@ -6,6 +6,7 @@ import setCatalogType from '/imports/ui/redux/actions/Catalog/setCatalogType.js'
 class Header extends Component {
   render() {
     let {currentUser, isLoggedIn, catalogType, dispatch} = this.props;
+    console.warn('currentUser:', currentUser);
     let logOut = () => {
       Meteor.logout(function(error, result){});
     }
@@ -27,6 +28,10 @@ class Header extends Component {
             <li ><Link to="/signup">SignUp</Link></li>
             <li ><Link to="/signin">SignIn</Link></li>
             <li ><Link to="/blogs">Blog</Link></li>
+            {this.props.isLoggedIn ?
+                <li ><Link to={'/wishlist/' + currentUser.profile.username}>My Wishlist</Link></li>
+                :  <li ><Link to="/signin">My Wishlist</Link></li> }
+
           </ul>
         </div>
         <div className="col-sm-4" style={{textAlign: 'right'}}>

@@ -7,7 +7,7 @@ export default class AddReviews extends Component {
         starRating: 0
       };
     }
-
+ 
   render() {
         let product = this.props.product;
         let setRating = (val) => {

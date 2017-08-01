@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import accounting from 'accounting';
 import AddReview from '../Reviews/AddReviews.jsx';
+import AddWishlist from '../Wishlist/AddWishlist.jsx';
+
 import ProductReviews from '../Reviews/ProductReviews.jsx';
 
 
@@ -14,6 +16,10 @@ export default class ProductDetails extends Component {
     }
     let flavorList = flavors.map(function(flavor, i){
     });
+
+    let addWishlist = () => {
+
+      }
 
     return (
       <div className="container">
@@ -34,6 +40,7 @@ export default class ProductDetails extends Component {
             </p>
             <h2 className="text-center"> {accounting.formatMoney(product.price)} </h2>
             <button className="btn btn-primary text-center"> Add to Cart </button>
+            <AddWishlist product={product}/>
             <div className="text-center">
               <AddReview product={product}/>
               <ProductReviews reviews={reviews} />

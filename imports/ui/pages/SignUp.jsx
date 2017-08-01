@@ -6,9 +6,10 @@ export default class Signup extends Component {
     let submitSignUp = () => {
       const name = this.refs.name.value.trim().charAt(0).toUpperCase()
         + this.refs.name.value.trim().substr(1).toLowerCase();
+      const username = this.refs.username.value.trim();
       const password = this.refs.password.value.trim();
       const email = this.refs.email.value.trim();
-      const profile = { name: name }
+      const profile = { name: name, username:username }
 
       Accounts.createUser({email, password, profile}, error => {
          const userId = Meteor.userId();
@@ -21,6 +22,12 @@ export default class Signup extends Component {
       <label htmlFor="inputName" className="col-sm-2 control-label">Name</label>
     <div className="col-sm-10">
         <input ref="name" type="text" className="htmlFor-control" id="name" placeholder="Name"/>
+      </div>
+  </div>
+    <div className="htmlFor-group">
+      <label htmlFor="inputName" className="col-sm-2 control-label">Username</label>
+    <div className="col-sm-10">
+        <input ref="username" type="text" className="htmlFor-control" id="name" placeholder="Username"/>
       </div>
   </div>
     <div className="htmlFor-group">
