@@ -6,16 +6,17 @@ export default class AddWishlist extends Component {
 
   render() {
         let product = this.props.product;
-        let user_id = Meteor.userId();
-        console.warn('user_id', user_id);
+        let username = this.props.username;
+
         let submitWishlist = () => {
 
         let insertValue = {
-            product_id: product._id
+            product_id: product._id,
+            username: username
           }
+          console.warn("insert value", insertValue);
 
-          console.warn('product_id', product._id);
-          Meteor.call("insertWishlist", product._id, insertValue,  function(error, result){
+          Meteor.call("insertWishlist", insertValue,  function(error, result){
             if(result === 'success'){
                       return Bert.alert('Added to your wishlist!', 'success',
                         'fixed-top', 'fa-thumbs-o-up');

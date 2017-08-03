@@ -16,7 +16,7 @@ import BlogWritePage  from '/imports/ui/pages/BlogWritePage.jsx';
 import BlogsContainer from '/imports/ui/containers/BlogsContainer.jsx';
 import OneBlogContainer from '/imports/ui/containers/OneBlogContainer.jsx';
 import WishlistContainer from '/imports/ui/containers/WishlistContainer.jsx';
-// import ViewWishlistContainer from '/imports/ui/containers/ViewWishlistContainer.jsx';
+import ViewWishlistContainer from '/imports/ui/containers/ViewWishlistContainer.jsx';
 
 
 //we're using react router
@@ -37,7 +37,7 @@ export default () => (
       <Route path="/blogs/:blog_id" component={OneBlogContainer} />
       <Route path="/drop/:product_id" component={OneDropContainer} />
       <Route path="/wishlist/:username" component={WishlistContainer} />
-      {/* <Route path="/wishlist/view/:username" component={ViewWishlistContainer} /> */}
+      <Route path="/wishlist/view/:username" component={ViewWishlistContainer} />
     </Route>
   </Router>
 );

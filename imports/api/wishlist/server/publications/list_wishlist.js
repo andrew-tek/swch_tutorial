@@ -4,9 +4,9 @@ import { Wishlist } from '/imports/api/wishlist/wishlist.js';
 import {Products} from '/imports/api/products/products.js';
 import { _ } from 'meteor/underscore';
 
-Meteor.publish("list_wishlist", function (userId) {
+Meteor.publish("list_wishlist", function (username) {
   let selector = {
-    user_id: userId
+    username: username
   };
   let wishlistCursor = Wishlist.find(selector);
   let wishlist = wishlistCursor.fetch();
