@@ -17,6 +17,7 @@ import BlogsContainer from '/imports/ui/containers/BlogsContainer.jsx';
 import OneBlogContainer from '/imports/ui/containers/OneBlogContainer.jsx';
 import WishlistContainer from '/imports/ui/containers/WishlistContainer.jsx';
 import ViewWishlistContainer from '/imports/ui/containers/ViewWishlistContainer.jsx';
+import WishlistPurchaseContainer from '/imports/ui/containers/WishlistPurchaseContainer.jsx';
 
 
 //we're using react router
@@ -38,6 +39,7 @@ export default () => (
       <Route path="/drop/:product_id" component={OneDropContainer} />
       <Route path="/wishlist/:username" component={WishlistContainer} />
       <Route path="/wishlist/view/:username" component={ViewWishlistContainer} />
+      <Route path="/wishlist/:username/:product_id" component={WishlistPurchaseContainer} />
     </Route>
   </Router>
 );

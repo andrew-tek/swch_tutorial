@@ -47,14 +47,12 @@ let data = [{
 ];
 
 
-console.log('inserting data');
 let checkProducts = Products.find({}).count();
 for (i = 0; i < data.length; i++) {
   let selector = {name: data[i].name};
   Products.upsert(selector, {$set: data[i]});
 }
 
-// console.warn('checkProducts', checkProducts);
 // if (checkProducts.length == 0) {
 //   for (i = 0; i < data.length; i++) {
 //     Products.insert(data[i]);

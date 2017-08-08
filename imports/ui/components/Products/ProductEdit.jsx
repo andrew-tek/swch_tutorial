@@ -7,8 +7,6 @@ export default class ProductEdit extends Component {
       let description = this.refs.description.value.trim();
       let volume = this.refs.volume.value.trim();
 
-      console.log('name', name);
-      console.log('description', description);
       let updateProduct = {
         name: name,
         description: description,

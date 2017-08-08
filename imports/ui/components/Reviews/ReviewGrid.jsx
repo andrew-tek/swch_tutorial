@@ -5,7 +5,6 @@ export default class ReviewGrid extends Component {
 
   render() {
     let review = this.props.review;
-    console.log('Review: ', review);
 
     return (
       <div>

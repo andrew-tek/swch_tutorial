@@ -8,8 +8,6 @@ export default createContainer((props) => {
   let userId = Meteor.userId();
   let user = Meteor.users.findOne({_id: userId});
   let username = user.profile.username;
-  console.warn(username);
-
 
   const wishlistSub = Meteor.subscribe('list_wishlist', username);
   const products = Products.find().fetch();

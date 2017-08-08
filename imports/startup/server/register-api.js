@@ -27,3 +27,5 @@ import '/imports/api/blogs/server/publications/one_blog.js';
 import '/imports/api/wishlist/server/publications/list_wishlist.js';
 import '/imports/api/wishlist/server/methods/insert_wishlist.js';
 import '/imports/api/wishlist/wishlist.js';
+import '/imports/api/wishlist/server/methods/delete_wishlist.js';
+import '/imports/api/wishlist/server/publications/purchase_wishlist.js';

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Router, Route, IndexRedirect, browserHistory } from 'react-router';
 export default class AddWishlist extends Component {
   constructor(props) {
       super(props);
@@ -9,12 +10,14 @@ export default class AddWishlist extends Component {
         let username = this.props.username;
 
         let submitWishlist = () => {
-
+        if (username == "null") {
+          browserHistory.push("/login")
+          return;
+        }
         let insertValue = {
             product_id: product._id,
             username: username
           }
-          console.warn("insert value", insertValue);
 
           Meteor.call("insertWishlist", insertValue,  function(error, result){
             if(result === 'success'){

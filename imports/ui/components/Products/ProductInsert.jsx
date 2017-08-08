@@ -10,10 +10,6 @@ export default class ProductInsert extends Component {
       let description = this.refs.description.value.trim();
       let volume = this.refs.volume.value.trim();
 
-      console.log('name', name);
-      console.log('description', description);
-      console.log('image', photo);
-      console.log('price', price);
       let product = {
         name: name,
         image: photo,

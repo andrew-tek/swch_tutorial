@@ -25,7 +25,6 @@ export default class ProductReviews extends Component {
 
   render() {
     let reviews = this.props.reviews;
-    console.log('review ', reviews);
     let listReviews = reviews.map(function(review){
         return <ReviewGrid key={review._id} review={review}/>
       });

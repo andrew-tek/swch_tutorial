@@ -9,7 +9,10 @@ export default class ProductDetails extends Component {
     let {product, reviews} = this.props;
     let userId = Meteor.userId();
     let user = Meteor.users.findOne({_id: userId});
-    let username = user.profile.username;
+    let username =  "null"
+    if (typeof(user) != 'undefined') {
+          username = user.profile.username;
+    }
     let flavors = [];
     if (product.flavors) {
       flavors = product.flavors;

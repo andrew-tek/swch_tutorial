@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
-import DeleteWishlist from '/imports/ui/components/Wishlist/DeleteWishlist.jsx';
 export default class WishlistGrid extends Component {
 
   render() {
@@ -14,10 +13,9 @@ export default class WishlistGrid extends Component {
         <h2 className="text-center"> {product.name}  </h2>
         <div className="text-center">
           <h2> <span> $ {product.price} </span> </h2>
-          <Link to={'/product/' + product._id}>
+          <Link to={'/wishlist/' + username + '/' + product._id}>
             <button className="btn btn-primary text-center"> Buy Now </button>
           </Link>
-          <DeleteWishlist productID={product._id} username={username} />
         </div>
       </div>
     )

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import WishlistGrid from '/imports/ui/components/Wishlist/WishlistGrid.jsx';
 
-
 export default class WishlistPage extends Component {
   render() {
       if (this.props.loading) {
@@ -16,7 +15,6 @@ export default class WishlistPage extends Component {
         <div>
           <div className="container">
             {productsList}
-
           </div>
         </div>
       )

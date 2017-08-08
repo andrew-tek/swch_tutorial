@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import WishlistGrid from '/imports/ui/components/Wishlist/WishlistGrid.jsx';
+import WishlistGrid from '/imports/ui/components/Wishlist/WishlistViewGrid.jsx';
 
 
 export default class ViewWishlistPage extends Component {

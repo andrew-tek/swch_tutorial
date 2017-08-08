@@ -16,7 +16,6 @@ export default class DropDetail extends Component {
     let nextTier = null;
     let needParticipants = 0;
     let nextPrice = null;
-    console.log('userId', this.props.userLogin);
     if(curTier.id < tiers.length-1){
       nextTier = tiers[curTier.id+1];
       needParticipants = nextTier.participants - product.participants;
@@ -52,7 +51,6 @@ export default class DropDetail extends Component {
     }
     var Countdown = require('react-cntdwn');
     var handleFinish = function () {
-      console.log('Skynet has become self-aware!');
     }
     return (
       <div className="col-sm-12">

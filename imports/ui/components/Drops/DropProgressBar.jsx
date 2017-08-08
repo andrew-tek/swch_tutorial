@@ -5,14 +5,12 @@ export default class DropProgressBar extends Component {
   render() {
     let tiers = this.props.product.tiers;
     let subTiers = tiers.slice(1, tiers.length);
-    //console.log('subArray', subTiers);
     //loop through the tier and create correct amount of tier interface
     var product = this.props.product;
     var fill = true;
     var participants = product.participants;
     var previousTier = null;
     let listTiers = subTiers.map(function(tier, i){
-      // console.log('product', product);
       let tierNeedParticipant = null;
       if(previousTier == null){
         tierNeedParticipant = tier.participants
@@ -31,7 +29,6 @@ export default class DropProgressBar extends Component {
         previousTier = tier;
       }
       progressString = progress.toString()+"%";
-      console.log('progress', progress);
       if(subTiers.length==1){
         return (
           <div >
