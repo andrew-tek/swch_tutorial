@@ -9,8 +9,9 @@ export default class ViewWishlistPage extends Component {
       }
       else {
         let products = this.props.products;
+        let username = this.props.username;
         let productsList = products.map(function(product,i){
-            return <WishlistGrid key={i} product={product}/>
+            return <WishlistGrid key={i} product={product} username = {username}/>
   });
       return (
         <div>

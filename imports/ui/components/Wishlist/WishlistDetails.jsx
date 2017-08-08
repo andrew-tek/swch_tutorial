@@ -6,6 +6,7 @@ import WishlistPurchase from '/imports/ui/components/Wishlist/WishlistPurchase.j
 export default class WishlistDetails extends Component {
   render() {
     let product = this.props.products;
+    let price = product.price * 0.1;
     let productId = product._id;
     let username = this.props.username;
     return (
@@ -21,7 +22,7 @@ export default class WishlistDetails extends Component {
               </p>
             </div> : null}
             <h2 className="text-center"> {accounting.formatMoney(product.price)} </h2>
-            <WishlistPurchase productId = {productId} username = {username}/>
+            <WishlistPurchase productId = {productId} username = {username} affiliateEarned = {price} name = {product.name} image = {product.image}/>
             <div className="text-center">
             </div>
           </div>

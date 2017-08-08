@@ -7,6 +7,7 @@ import {Products} from '/imports/api/products/products.js';
 export default createContainer((props) => {
   let userId = Meteor.userId();
   let username = props.params.username;
+  console.warn('wishlist purchase container', username);
   let productId = props.params.product_id;
 
 

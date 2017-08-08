@@ -6,7 +6,7 @@ export default class WishlistGrid extends Component {
     let {product} = this.props;
     let userId = Meteor.userId();
     let user = Meteor.users.findOne({_id: userId});
-    let username = user.profile.username;
+    let username = this.props.username;
     return (
       <div className="col-sm-3">
         <img className="img-responsive"   src={product.image}/>

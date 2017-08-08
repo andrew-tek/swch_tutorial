@@ -28,7 +28,8 @@ class Header extends Component {
             <li ><Link to="/signup">SignUp</Link></li>
             <li ><Link to="/signin">SignIn</Link></li>
             <li ><Link to="/blogs">Blog</Link></li>
-            <li ><Link to="/wishlist/view/andrewtek">View Andrew's Wishlist</Link></li>
+            <li ><Link to="/wishlist/view/andrewtek">View Sample Wishlist</Link></li>
+            <li ><Link to="/affiliate"> My Affiliates</Link></li>
 
             {this.props.isLoggedIn ?
                 <li ><Link to={'/wishlist/' + currentUser.profile.username}>My Wishlist</Link></li>

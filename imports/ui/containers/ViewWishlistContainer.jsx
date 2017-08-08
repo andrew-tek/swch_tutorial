@@ -15,6 +15,7 @@ export default createContainer((props) => {
   return {
     wishlist: wishlist,
     products: products,
+    username: username,
     loading: !wishlistSub.ready()
   };
 }, ViewWishlistPage);
