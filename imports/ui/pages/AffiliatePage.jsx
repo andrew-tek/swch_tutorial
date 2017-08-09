@@ -19,8 +19,19 @@ export default class ViewWishlistPage extends Component {
       return (
         <div>
           <div className="container">
-            {affiliateList}
-            <h1> Total Cost: {accounting.formatMoney(totalCost)} </h1>
+            <table className="table table-hover">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>User Purchased</th>
+                <th>Earned</th>
+              </tr>
+            </thead>
+                <tbody>
+              {affiliateList}
+            </tbody>
+              </table>
+            <h1> Total Affiliates Earned: {accounting.formatMoney(totalCost)} </h1>
 
           </div>
         </div>
